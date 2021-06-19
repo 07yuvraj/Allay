@@ -49,6 +49,15 @@ import {
     volunteerStatusReducer
 } from './reducers/volunteerReducers'
 
+import {
+    activeFormsReducer,
+    formPickReducer,
+    pickedFormsReducer,
+    volunteerFormByIdReducer,
+    formApproveReducer,
+    formDeclineReducer
+} from './reducers/selectorReducers'
+
 const reducer = combineReducers({
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
@@ -86,6 +95,12 @@ const reducer = combineReducers({
     chatReply: chatReplyReducer,
     volunteerApply: volunteerApplyReducer,
     volunteerStatus: volunteerStatusReducer,
+    activeForms: activeFormsReducer,
+    formPick: formPickReducer,
+    pickedForms: pickedFormsReducer,
+    volunteerFormById: volunteerFormByIdReducer,
+    formApprove: formApproveReducer,
+    formDecline: formDeclineReducer
 })
 
 const userInfoFromStorage = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null

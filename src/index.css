@@ -369,6 +369,22 @@ body::-webkit-scrollbar-thumb {
   color: black;
 }
 
+.selectorForms {
+  margin: 0% 28%;
+}
+
+.selectorQuestionData {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.answerHeading {
+  font-size: 1.5rem;
+}
+
+.answerText {
+  font-size: 1.2rem;
+}
 
 @media only screen and (max-width: 600px) {
   .navbar {
@@ -503,6 +519,12 @@ body::-webkit-scrollbar-thumb {
     padding-left: 5%;
     height: 50vh;
   }
+  .selectorForms {
+    margin: 0%;
+  }
+  .selectorQuestionData {
+    grid-template-columns: 75% 25%;
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -512,6 +534,9 @@ body::-webkit-scrollbar-thumb {
   .questionPhoto1 {
     width: 370px;
     height: 140px;
+  }
+  .selectorForms {
+    margin: 0% 5%;
   }
 }
 
@@ -529,6 +554,9 @@ body::-webkit-scrollbar-thumb {
     padding-left: 0;
     color: white;
   }
+  .selectorForms {
+    margin: 0% !important;
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -543,11 +571,32 @@ body::-webkit-scrollbar-thumb {
   .questionData {
     grid-template-columns: 100%;
   }
+  .selectorForms {
+    margin: 0% 10%;
+  }
+  .selectorQuestionData {
+    grid-template-columns: 70% 30%;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
   .moodButtons-1 {
     display: flex;
     justify-content: space-evenly;
+  }
+  .selectorForms {
+    margin: 0% 23%;
+  }
+  .loginPage {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+  }
+  .signupPage {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2%;
+    margin-bottom: 3%;
   }
 }

@@ -4,7 +4,7 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import ActiveQuestion from '../components/ActiveQuestion'
 import { useDispatch, useSelector } from 'react-redux'
-import { LinkContainer } from 'react-router-bootstrap'
+// import { LinkContainer } from 'react-router-bootstrap'
 import { fetchActiveQuestions } from '../actions/questionActions'
 
 const VolunteerActiveQuestionsScreen = ({ history }) => {
@@ -25,9 +25,7 @@ const VolunteerActiveQuestionsScreen = ({ history }) => {
                     <div>
                         {questionList.length === 0 ? (<h3 className='text-center'>No Question</h3>) : (
                             questionList.map(questionData => (
-                                <LinkContainer key={questionData.childKey} to={`/myquestions/${questionData.childKey}`}>
-                                    <ActiveQuestion questionId={questionData.childKey} questionInfo={questionData.childData} />
-                                </LinkContainer>
+                                    <ActiveQuestion key={questionData.childKey} questionId={questionData.childKey} questionInfo={questionData.childData} />
                             ))
                         )}
                     </div>

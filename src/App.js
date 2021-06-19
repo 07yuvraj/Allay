@@ -20,6 +20,10 @@ import VolunteerActiveQuestionsScreen from './screen/VolunteerActiveQuestionsScr
 import VolunteerPickedQuestionsScreen from './screen/VolunteerPickedQuestionsScreen'
 import VolunteerRepliedQuestionsScreen from './screen/VolunteerRepliedQuestionsScreen'
 import VolunteerQuestionByIdScreen from './screen/VolunteerQuestionByIdScreen'
+import SelectorControlScreen from './screen/SelectorControlScreen'
+import SelectorActiveFormsScreen from './screen/SelectorActiveFormsScreen'
+import SelectorPickedFormsScreen from './screen/SelectorPickedFormsScreen'
+import SelectorFormByIdScreen from './screen/SelectorFormByIdScreen'
 import WelcomeScreen from './screen/WelcomeScreen'
 // import { fetchCurrentUser } from './actions/userActions'
 // import { useDispatch } from 'react-redux'
@@ -64,6 +68,10 @@ function App() {
           <Route eaxct path='/volunteer/picked' component={VolunteerPickedQuestionsScreen} />
           <Route exact path='/volunteer/replied' component={VolunteerRepliedQuestionsScreen} />
           <Route exact path='/volunteer/:questionId' component={VolunteerQuestionByIdScreen} />
+          <Route exact path='/selector' component={SelectorControlScreen} />
+          <Route exact path='/selector/active' component={SelectorActiveFormsScreen} />
+          <Route exact path='/selector/picked' component={SelectorPickedFormsScreen} />
+          <Route exact path='/selector/:formId' component={SelectorFormByIdScreen} />
           <Route path='/' component={NotFound} />
         </Switch>
       </div>

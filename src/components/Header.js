@@ -21,6 +21,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import HomeIcon from '@material-ui/icons/Home';
 import NotesIcon from '@material-ui/icons/Notes';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import AppsIcon from '@material-ui/icons/Apps';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import ChatIcon from '@material-ui/icons/Chat';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
@@ -133,7 +134,10 @@ function Header(props) {
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const handleModalClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = () => {
+        setMobileOpen(false);
+        setShow(true);
+    }
 
     const dispatch = useDispatch()
     const currentUser = useSelector(state => state.currentUser)
@@ -194,6 +198,9 @@ function Header(props) {
         if (path.url.startsWith('/volunteer') && presentUserInfo && (presentUserInfo.userRole > 4)) {
             history.push('/myquestions')
         }
+        if (path.url.startsWith('/selector') && userCurrent && presentUserInfo && (presentUserInfo.userRole > 2)) {
+            history.push(`/profile/${userCurrent.uid}`)
+        }
         if (userCurrent && !presentUserInfo) {
             dispatch(fetchPresentUser())
         }
@@ -221,6 +228,17 @@ function Header(props) {
                     </ListItem>
                 </LinkContainer>
                 <Divider />
+                {presentUserInfo && presentUserInfo.userRole < 3 && (
+                    <div>
+                        <LinkContainer to='/selector'>
+                            <ListItem button>
+                                <ListItemIcon><AppsIcon /></ListItemIcon>
+                                <ListItemText primary='Selector Controls' />
+                            </ListItem>
+                        </LinkContainer>
+                        <Divider />
+                    </div>
+                )}
                 <LinkContainer to='/myblogs'>
                     <ListItem button>
                         <ListItemIcon><NotesIcon /></ListItemIcon>
